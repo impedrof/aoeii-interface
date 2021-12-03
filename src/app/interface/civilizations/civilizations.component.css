@@ -1,0 +1,46 @@
+@import url(../shared/grid.style.css);
+@import url(../shared/card.style.css);
+
+/* CARD CONTENT */
+.card p {
+  font-family: "Poppins", sans-serif;
+}
+
+.card svg {
+  fill: #f8d210;
+  transition: 250ms 250ms ease-out;
+}
+
+.card:hover svg {
+  fill: #ffffff;
+}
+
+.card:hover .card__name,
+.card:hover .card__army_type {
+  color: #ffffff;
+}
+
+.card__name,
+.card__army_type {
+  display: flex;
+  transition: color 250ms 250ms ease;
+}
+
+.card__name {
+  font-size: 20px;
+  gap: 10px;
+  color: #454545;
+}
+
+.card__name svg {
+  width: 28px;
+}
+
+.card__army_type {
+  gap: 14px;
+  color: #767676;
+}
+
+.card__army_type svg {
+  width: 24px;
+}
