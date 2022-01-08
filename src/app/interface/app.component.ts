@@ -1,17 +1,22 @@
-import { AfterViewInit, Component, ElementRef, HostListener, OnInit, Renderer2, ViewChild } from '@angular/core';
+import { AfterContentChecked, AfterViewInit, Component, ElementRef, HostListener, OnInit, Renderer2, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements AfterViewInit, OnInit {
+export class AppComponent implements AfterViewInit, OnInit, AfterContentChecked {
   @ViewChild('main') main: ElementRef | undefined;
   @ViewChild('header') header: ElementRef | undefined;
 
   title = 'aoeii-interface';
 
   constructor(private renderer: Renderer2) {}
+
+  
+  ngAfterContentChecked(): void {
+    this.adjustHeaderMargin();
+  }
 
   ngOnInit(): void {
     this.adjustHeaderMargin();
