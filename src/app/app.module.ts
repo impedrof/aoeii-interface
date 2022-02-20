@@ -7,24 +7,20 @@ import { AppRoutingModule } from './app-routing.module';
 import { CivilizationRepo } from './application/repo/civilization.repo';
 import { CivilizationDataRepo } from './infrastructure/repo/civilization-data.repo';
 import { AppComponent } from './interface/app.component';
+import { CivilizationComponent } from './interface/civilizations/civilization/civilization.component';
 import { CivilizationsComponent } from './interface/civilizations/civilizations.component';
 import { StateModule } from './state.module';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    CivilizationsComponent
-  ],
+  declarations: [AppComponent, CivilizationsComponent, CivilizationComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     StateModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
   ],
-  providers: [
-    { provide: CivilizationRepo, useClass: CivilizationDataRepo },
-  ],
-  bootstrap: [AppComponent]
+  providers: [{ provide: CivilizationRepo, useClass: CivilizationDataRepo }],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

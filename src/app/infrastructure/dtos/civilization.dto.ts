@@ -1,34 +1,39 @@
-import { Civilization } from "src/app/domain/civilization";
+import { Civilization } from 'src/app/domain/civilization';
 
-export class CivilizationDto {
-    id: number;
-    name: string;
-    expansion: string;
-    armyType: string;
-    uniqueUnit: string[];
-    uniqueTech: string[];
-    teamBonus: string;
-    civilizationBonus: string[];
+export class CivilizationDto extends Civilization {
+  unique_unit: string[];
+  unique_tech: string[];
+  civilization_bonus: string[];
 
+  constructor(
+    id: number,
+    name: string,
+    expansion: string,
+    army_type: string,
+    team_bonus: string,
+    unique_unit: string[],
+    unique_tech: string[],
+    civilization_bonus: string[]
+  ) {
+    super({
+      id: id,
+      name: name,
+      expansion: expansion,
+      armyType: army_type,
+      team_bonus: team_bonus,
+    });
+    this.unique_unit = unique_unit;
+    this.unique_tech = unique_tech;
+    this.civilization_bonus = civilization_bonus;
+  }
 
-    constructor(id: number, name: string, expansion: string, armyType: string, uniqueUnit: string[], uniqueTech: string[], teamBonus: string, civilizationBonus: string[]) {
-        this.id = id;
-        this.name = name;
-        this.expansion = expansion;
-        this.armyType = armyType;
-        this.uniqueUnit = uniqueUnit;
-        this.uniqueTech = uniqueTech;
-        this.teamBonus = teamBonus;
-        this.civilizationBonus = civilizationBonus;
-    }
-
-    public toDomain(): Civilization {
-        return new Civilization({
-            id: this.id,
-            expansion: this.expansion,
-            name: this.name,
-            armyType: this.armyType,
-        });
-    }
-    
+  static toDomain(dto: CivilizationDto): Civilization {
+    return new Civilization({
+      id: dto.id,
+      name: dto.name,
+      armyType: dto.army_type,
+      expansion: dto.expansion,
+      team_bonus: dto.team_bonus,
+    });
+  }
 }

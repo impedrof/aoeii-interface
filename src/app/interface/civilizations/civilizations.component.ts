@@ -35,7 +35,7 @@ export class CivilizationsComponent implements OnInit {
         const searchInput = this.searchInput.toLocaleLowerCase();
         return (
           civ.name.toLocaleLowerCase().includes(searchInput) ||
-          civ.armyType.toLocaleLowerCase().includes(searchInput)
+          civ.army_type.toLocaleLowerCase().includes(searchInput)
         );
       });
     } else {

@@ -1,8 +1,9 @@
-import { Civilization } from "src/app/domain/civilization";
+import { Civilization } from 'src/app/domain/civilization';
 
 export abstract class CivilizationRepo {
-    constructor() {}
+  constructor() {}
 
-    public abstract getAll(): Promise<Civilization[]>;
+  public abstract getAll(): Promise<Civilization[]>;
 
+  public abstract getCivilization(id: number): Promise<Civilization>;
 }
