@@ -1,4 +1,10 @@
 
+<div class="search">
+    <div class="search-box">
+        <input type="text" placeholder="Search" [(ngModel)]="searchInput" (ngModelChange)="search()">
+    </div>
+</div>
+
 <div class="grid">
 
     <div class="card" *ngFor="let civilization of civilizations">

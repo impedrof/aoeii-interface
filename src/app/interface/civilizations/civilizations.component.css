@@ -1,5 +1,6 @@
 @import url(../shared/grid.style.css);
 @import url(../shared/card.style.css);
+@import url(../shared/search.style.css);
 
 /* CARD CONTENT */
 .card p {
