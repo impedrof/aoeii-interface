@@ -10,6 +10,7 @@ import { AppComponent } from './interface/app.component';
 import { CivilizationComponent } from './interface/civilizations/civilization/civilization.component';
 import { CivilizationsComponent } from './interface/civilizations/civilizations.component';
 import { StateModule } from './state.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [AppComponent, CivilizationsComponent, CivilizationComponent],
@@ -19,6 +20,7 @@ import { StateModule } from './state.module';
     StateModule,
     HttpClientModule,
     FormsModule,
+    BrowserAnimationsModule,
   ],
   providers: [{ provide: CivilizationRepo, useClass: CivilizationDataRepo }],
   bootstrap: [AppComponent],

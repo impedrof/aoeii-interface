@@ -2,6 +2,32 @@
 @import url(../shared/card.style.css);
 @import url(../shared/search.style.css);
 
+.card {
+  cursor: pointer;
+  transition: color 150ms 150ms ease, box-shadow 600ms 150ms ease;
+}
+
+.card:hover {
+  box-shadow: 2px 2px 5px #f8d11042;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 5px;
+  left: 0px;
+  bottom: 0;
+  top: 0;
+  background-color: #ffdc2f;
+  transition: width 50ms 50ms ease-out;
+  z-index: -1;
+}
+
+.card:hover::before {
+  width: 100%;
+}
+
 /* CARD CONTENT */
 .card p {
   font-family: "Poppins", sans-serif;
@@ -9,7 +35,7 @@
 
 .card svg {
   fill: #f8d210;
-  transition: 250ms 250ms ease-out;
+  transition: 50ms 50ms ease-out;
 }
 
 .card:hover svg {
@@ -24,7 +50,7 @@
 .card__name,
 .card__army_type {
   display: flex;
-  transition: color 250ms 250ms ease;
+  transition: color 50ms 50ms ease;
 }
 
 .card__name {

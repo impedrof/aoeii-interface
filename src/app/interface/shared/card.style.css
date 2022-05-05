@@ -5,40 +5,5 @@
   padding: 20px;
   overflow: hidden;
   z-index: 1;
-  transition: color 250ms 250ms ease, box-shadow 800ms 250ms ease;
-  cursor: pointer;
   background-color: #ffffff;
-}
-
-.card:hover {
-  box-shadow: 2px 2px 5px #f8d11042;
-}
-
-.card::after {
-  content: "";
-  position: absolute;
-  height: 100%;
-  width: 3px;
-  left: 0;
-  bottom: 0;
-  top: 0;
-  background-color: #ffdc2f;
-}
-
-.card::before {
-  content: "";
-  position: absolute;
-  height: 100%;
-  width: 3px;
-  left: 7px;
-  bottom: 0;
-  top: 0;
-  background-color: #ffdc2f;
-  transition: width 300ms 250ms, left 250ms ease;
-  z-index: -1;
-}
-
-.card:hover::before {
-  left: 0;
-  width: 100%;
 }

@@ -1,5 +1,9 @@
 @import url(shared/container.style.css);
 
+#main {
+  position: relative;
+}
+
 .box {
   display: flex;
   flex-direction: column;

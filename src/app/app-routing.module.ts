@@ -5,8 +5,16 @@ import { CivilizationsComponent } from './interface/civilizations/civilizations.
 
 const routes: Routes = [
   { path: '', redirectTo: '/civilizations', pathMatch: 'full' },
-  { path: 'civilizations', component: CivilizationsComponent },
-  { path: 'civilizations/:id', component: CivilizationComponent },
+  {
+    path: 'civilizations',
+    component: CivilizationsComponent,
+    data: { animation: 'isRight' },
+  },
+  {
+    path: 'civilizations/:id',
+    component: CivilizationComponent,
+    data: { animation: 'isLeft' },
+  },
 ];
 
 @NgModule({

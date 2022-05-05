@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Action, State, Store } from '@ngxs/store';
 import { Civilization } from 'src/app/domain/civilization';
-import { CivilizationDto } from 'src/app/infrastructure/dtos/civilization.dto';
 import { UpdateCivilizations } from '../actions/civilization.action';
 import { CivilizationRepo } from '../repo/civilization.repo';
 
@@ -23,7 +22,6 @@ export class CivilizationUseCase {
   async getCivilization(id: number): Promise<void> {
     try {
       const civilization: Civilization = await this.repo.getCivilization(id);
-      console.log(civilization);
     } catch (e) {
       console.log(e);
     }
