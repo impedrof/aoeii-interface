@@ -1,4 +1,4 @@
-<div class="card">
+<div class="card" *ngIf="civilization">
   <div class="division">
     <div class="btn-back" routerLink="..">
       <svg
@@ -19,26 +19,29 @@
   </div>
   <div class="division">
     <div class="top">
-      <div class="name">Aztecs</div>
-      <div class="army">Infantry and Monk</div>
+      <div class="name">{{ civilization?.name }}</div>
+      <div class="army">{{ civilization?.army_type }}</div>
     </div>
     <div class="bottom">
       <div class="field">Expansion</div>
-      <div class="value">The Conquerors</div>
+      <div class="value">{{ civilization?.expansion }}</div>
 
       <div class="field">Civilization Bonus</div>
       <div class="value">
         <ul>
-          <li>Villagers carry +5</li>
-          <li>Military units created 15% faster</li>
-          <li>+5 Monk hit points for each</li>
-          <li>Monastery technology</li>
-          <li>Loom free</li>
+          <li *ngFor="let bonus of civilization?.civilization_bonus">
+            {{ bonus }}
+          </li>
         </ul>
       </div>
 
       <div class="field">Team Bonus</div>
-      <div class="value">Relics generate +33% gold</div>
+      <div class="value">{{ civilization?.team_bonus }}</div>
     </div>
   </div>
+</div>
+
+<div class="area-loading" *ngIf="!civilization">
+  <div class="circle x1"></div>
+  <div class="circle x2"></div>
 </div>

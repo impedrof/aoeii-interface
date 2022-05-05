@@ -47,3 +47,52 @@
 .field {
   color: #797979;
 }
+
+
+/* loading */
+.area-loading {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.circle {
+  position: relative;
+  width: 15px;
+  height: 15px;
+  background: #f8d210;
+  border-radius: 10px;
+}
+
+.circle.x1 {
+  animation: loading 1500ms infinite linear;
+}
+
+.circle.x2 {
+  animation: loading2 1500ms infinite linear;
+}
+
+@keyframes loading {
+  0% {
+    left: 0;
+  }
+  50% {
+    left: 30px;
+  }
+  100% {
+    left: 0;
+  }
+}
+
+@keyframes loading2 {
+  0% {
+    right: 0;
+  }
+  50% {
+    right: 30px;
+  }
+  100% {
+    right: 0;
+  }
+}
